@@ -1,4 +1,4 @@
-# Nombre de tu juego
+# Hospital Gone Wrong
 
 **Desarrolladores:**
 
@@ -13,8 +13,9 @@
 
 | Nombre | Colaboración | Comunicación | Responsabilidad
 | ----------- | ----------- | ----------- | ----------- |
-| Header | Title | - | - |
-| Paragraph | Text |  - | - |
+| Dominic Bravo Mote | 100  | 80 | 60 |
+| Miguel Ángel López Moyotl | 100 |  80 | 60 |
+| Juan Luis Martinez Castañeda | 100 |  80 | 60 |
 
 ## 1. Propósito de tu juego
 
@@ -77,4 +78,5 @@ Movimiento del Personaje (Correr y Deslizarse):
 
 ## 7. Bibliografía
 
+-Pendiente
 [Cada fuente debe ser citada de manera correcta, siguiendo el formato APA.]: # 
