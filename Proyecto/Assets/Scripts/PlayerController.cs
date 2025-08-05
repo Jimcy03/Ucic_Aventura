@@ -3,8 +3,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float acceleration = 15f;
-    public float deceleration = 20f;
     public Color lineColor = Color.yellow;
     public float lineWidth = 0.1f;
     public string sortingLayerName = "Player";
@@ -32,8 +30,8 @@ public class PlayerController : MonoBehaviour
         lineRenderer.sortingLayerName = sortingLayerName;
         lineRenderer.sortingOrder = sortingOrder;
 
-        // Configurar física
-        rb.linearDamping = 10f; // Mayor fricción
+        // Congelar rotación en el Rigidbody
+        rb.freezeRotation = true;
     }
 
     void Update()
@@ -53,26 +51,8 @@ public class PlayerController : MonoBehaviour
             Input.GetAxisRaw("Vertical")
         ).normalized;
 
-        // Sistema de movimiento con aceleración/deceleración
-        Vector2 targetVelocity = moveInput * moveSpeed;
-        Vector2 velocityChange = targetVelocity - rb.linearVelocity;
-
-        // Aplicar fuerza con aceleración controlada
-        if (moveInput.magnitude > 0.1f)
-        {
-            rb.AddForce(velocityChange * acceleration);
-        }
-        else
-        {
-            // Frenado más rápido cuando no hay input
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, deceleration * Time.fixedDeltaTime);
-        }
-
-        // Limitar velocidad máxima
-        if (rb.linearVelocity.magnitude > moveSpeed)
-        {
-            rb.linearVelocity = rb.linearVelocity.normalized * moveSpeed;
-        }
+        // Mover usando física para colisiones
+        rb.linearVelocity = moveInput * moveSpeed;
     }
 
     void UpdateGuideLine()
@@ -84,10 +64,6 @@ public class PlayerController : MonoBehaviour
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, mousePosition);
 
-        // Rotar el jugador hacia el cursor
-        Vector3 direction = mousePosition - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     Vector3 GetMouseWorldPosition()
@@ -95,14 +71,5 @@ public class PlayerController : MonoBehaviour
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = -mainCamera.transform.position.z;
         return mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-    }
-
-    // Detener completamente el movimiento al chocar con paredes
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Paredes"))
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
     }
 }
