@@ -1,5 +1,5 @@
 Hospital Gone Wrong
-![Portada del juego](https://github.com/Jimcy03/Ucic_Aventura/raw/main/Assets/Sprites/Portada.png)
+![Portada del juego](https://raw.githubusercontent.com/Jimcy03/Ucic_Aventura/refs/heads/main/Assets/Sprites/Portada.png)
 "Hospital Gone Wrong" es un cautivador juego de plataformas 2D que fusiona la adrenalina del terror con la acción, todo ello presentado a través de un distintivo estilo gráfico de Pixel Art. El jugador se sumerge en la piel de Juana Botones, una valiente creadora de contenido que se adentra en las ruinas del Hospital de San Alejandro, un lugar marcado por la tragedia y que ahora alberga horrores inimaginables. Sobrevive a oleadas de enemigos usando el flash de tu cámara mientras exploras un hospital abandonado lleno de peligros.  
 
 ### Tabla de evaluación del equipo  
