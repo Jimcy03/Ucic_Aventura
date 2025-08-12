@@ -6,8 +6,8 @@ Hospital Gone Wrong
 
 | Nombre | Colaboración | Comunicación | Responsabilidad |  
 | ----------- | ----------- | ----------- | ----------- |  
-| Dominic Bravo Mote | 2  | 1 | 2 |  
-| Miguel Ángel López Moyotl | 1 |  2 | 1 |  
+| Dominic Bravo Mote | 1  | 1 | 2 |  
+| Miguel Ángel López Moyotl | 2 |  2 | 1 |  
 | Juan Luis Martinez Castañeda | 10 |  7 | 10 |  
 
 ### Características clave  
